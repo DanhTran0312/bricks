@@ -9,6 +9,8 @@ environment:
   sdk: '>=2.19.4 <3.0.0'
 
 dependencies:
+  {{name.snakeCase()}}_app_ui:
+    path: packages/{{name.snakeCase()}}_app_ui
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -29,12 +31,3 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
-
-  assets:
-    - assets/images/
-    - assets/fonts/
-    - assets/svgs/
-    - assets/audios/
-    - assets/videos/
-    - assets/rive/
-    - assets/lottie/

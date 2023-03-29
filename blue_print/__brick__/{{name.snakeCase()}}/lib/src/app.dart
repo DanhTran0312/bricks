@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:{{name.snakeCase()}}/src/l10n/l10n.dart';
 import 'package:{{name.snakeCase()}}/src/router/app_router.dart';
-import 'package:flutter/material.dart';
+import 'package:{{name.snakeCase()}}_app_ui/{{name.snakeCase()}}_app_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class {{name.pascalCase()}}App extends ConsumerWidget {
@@ -12,9 +13,7 @@ class {{name.pascalCase()}}App extends ConsumerWidget {
     return MaterialApp.router(
       routerConfig: goRouter,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: {{name.pascalCase()}}Theme.standard,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
     );
