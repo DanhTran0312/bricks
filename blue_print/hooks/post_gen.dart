@@ -4,88 +4,58 @@ import 'package:mason/mason.dart';
 import 'package:recase/recase.dart';
 
 void run(HookContext context) async {
-  // TODO: add post-generation logic
-  ReCase rcName = ReCase(context.vars['name']);
-  String projectName = rcName.snakeCase;
+  final projectName = ReCase(context.vars['name']).snakeCase;
 
-  final runningPubClean =
-      context.logger.progress('Running flutter pub clean...');
-  await Process.run(
-    'flutter',
-    ['pub', 'clean'],
-    workingDirectory: projectName,
-    runInShell: true,
+  await _runProcess(
+      context, 'flutter pub clean', ['flutter', 'pub', 'clean'], projectName);
+  await _runProcess(
+      context, 'flutter pub get', ['flutter', 'pub', 'get'], projectName);
+
+  await _runProcess(
+    context,
+    'Installing flutter_gen',
+    ['dart', 'pub', 'global', 'activate', 'flutter_gen'],
+    projectName,
   );
-  runningPubClean.complete();
-
-  final runningPubGet = context.logger.progress('Running flutter pub get...');
-
-  await Process.run(
-    'flutter',
-    ['pub', 'get'],
-    workingDirectory: projectName,
-    runInShell: true,
-  );
-
-  runningPubGet.complete();
-
-  final installFlutterGen =
-      context.logger.progress('Installing flutter_gen...');
-
-  await Process.run(
-    'dart',
-    ['pub', 'global', 'activate', 'flutter_gen'],
-    workingDirectory: projectName,
-    runInShell: true,
-  );
-
-  installFlutterGen.complete();
 
   final uiPackageDir = Directory('$projectName/packages/${projectName}_app_ui');
-
-  final runningFlutterPubGet =
-      context.logger.progress('Running flutter pub get in ui package...');
-
-  await Process.run(
-    'flutter',
-    ['pub', 'get'],
-    workingDirectory: uiPackageDir.path,
-    runInShell: true,
+  await _runProcess(
+    context,
+    'Running flutter pub get in ui package',
+    ['flutter', 'pub', 'get'],
+    uiPackageDir.path,
   );
 
-  runningFlutterPubGet.complete();
-
-  final runningBuildRunner = context.logger
-      .progress('Running flutter packages pub run build_runner build -d...');
-
-  await Process.run(
-    'flutter',
-    ['packages', 'pub', 'run', 'build_runner', 'build', '-d'],
-    workingDirectory: uiPackageDir.path,
-    runInShell: true,
+  await _runProcess(
+    context,
+    'Running flutter packages pub run build_runner build -d',
+    ['flutter', 'packages', 'pub', 'run', 'build_runner', 'build', '-d'],
+    uiPackageDir.path,
   );
 
-  runningBuildRunner.complete();
-
-  final runningFlutterGen =
-      context.logger.progress('Running flutter pub run flutter_gen...');
-
-  await Process.run(
-    'fluttergen',
-    ['-c'],
-    workingDirectory: uiPackageDir.path,
-    runInShell: true,
+  await _runProcess(
+    context,
+    'Running flutter pub run flutter_gen',
+    ['fluttergen', '-c'],
+    uiPackageDir.path,
   );
 
-  runningFlutterGen.complete();
+  await _runProcess(
+      context, 'Running dart fix', ['dart', 'fix', '--apply'], projectName);
+}
 
-  final runningDartFix = context.logger.progress('Running dart fix...');
+Future<void> _runProcess(
+  HookContext context,
+  String progressMessage,
+  List<String> command,
+  String workingDirectory,
+) async {
+  final runningProcess = context.logger.progress(progressMessage);
   await Process.run(
-    'dart',
-    ['fix', '--apply'],
-    workingDirectory: projectName,
+    command[0],
+    command.sublist(1),
+    workingDirectory: workingDirectory,
     runInShell: true,
   );
-
-  runningDartFix.complete();
+  runningProcess.complete();
 }
