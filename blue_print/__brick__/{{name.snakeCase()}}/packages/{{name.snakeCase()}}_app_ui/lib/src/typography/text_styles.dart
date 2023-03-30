@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 class {{name.pascalCase()}}TextStyle {
   static const _baseTextStyle = TextStyle(
     package: '{{name.snakeCase()}}_app_ui',
-    fontFamily: 'OpenSans',
+    fontFamily: FontFamily.openSans,
     color: {{name.pascalCase()}}Colors.black,
     fontWeight: {{name.pascalCase()}}FontWeight.regular,
   );
