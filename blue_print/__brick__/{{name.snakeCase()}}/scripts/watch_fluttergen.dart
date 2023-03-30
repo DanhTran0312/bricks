@@ -1,4 +1,7 @@
+import 'dart:convert';
 import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 
 void main() async {
   // Change the working directory to the desired path.
@@ -17,12 +20,12 @@ Future<void> _runCommand(String command) async {
   );
 
   // Attach process stdout and stderr to the console.
-  process.stdout.transform(utf8.decoder).listen((data) => print(data));
-  process.stderr.transform(utf8.decoder).listen((data) => print(data));
+  process.stdout.transform(utf8.decoder).listen(debugPrint);
+  process.stderr.transform(utf8.decoder).listen(debugPrint);
 
   // Wait for the process to finish and get the exit code.
   final exitCode = await process.exitCode;
   if (exitCode != 0) {
-    print('Command "$command" exited with code $exitCode.');
+    debugPrint('Command "$command" exited with code $exitCode.');
   }
 }
