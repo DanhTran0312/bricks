@@ -10,6 +10,8 @@ void run(HookContext context) async {
       context, 'flutter pub clean', ['flutter', 'pub', 'clean'], projectName);
   await _runProcess(
       context, 'flutter pub get', ['flutter', 'pub', 'get'], projectName);
+  await _runProcess(context, 'flutter pub upgrade --major-versions',
+      ['flutter', 'pub', 'upgrade' '--major-versions'], projectName);
 
   await _runProcess(
     context,
@@ -23,6 +25,13 @@ void run(HookContext context) async {
     context,
     'Running flutter pub get in ui package',
     ['flutter', 'pub', 'get'],
+    uiPackageDir.path,
+  );
+
+  await _runProcess(
+    context,
+    'Running flutter pub upgrade --major-versions in ui package',
+    ['flutter', 'pub', 'upgrade', '--major-versions'],
     uiPackageDir.path,
   );
 

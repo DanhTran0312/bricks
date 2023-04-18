@@ -7,6 +7,11 @@ enum AppRoute {
   counter,
 }
 
+final globalKeyProvider = Provider<GlobalKey<NavigatorState>>((ref) {
+  final navigatorKey = GlobalKey<NavigatorState>();
+  return navigatorKey;
+});
+
 final goRouterProvider = Provider<GoRouter>(
   (ref) => GoRouter(
     initialLocation: '/',

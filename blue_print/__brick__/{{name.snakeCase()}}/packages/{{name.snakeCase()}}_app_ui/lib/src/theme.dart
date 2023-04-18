@@ -1,5 +1,4 @@
-import 'package:{{name.snakeCase()}}_app_ui/src/colors.dart';
-import 'package:{{name.snakeCase()}}_app_ui/src/typography/typography.dart';
+import 'package:{{name.snakeCase()}}_app_ui/lib.dart';
 import 'package:flutter/material.dart';
 
 const _smallTextScaleFactor = 0.80;
@@ -11,12 +10,12 @@ class {{name.pascalCase()}}Theme {
   static ThemeData get standard {
     return ThemeData(
       colorScheme:
-          ColorScheme.fromSwatch(accentColor: {{name.pascalCase()}}Colors.primary),
+          ColorScheme.fromSwatch(accentColor: KColor.primary),
       appBarTheme: _appBarTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
       outlinedButtonTheme: _outlinedButtonTheme,
       textTheme: _textTheme,
-      dialogBackgroundColor: {{name.pascalCase()}}Colors.whiteBackground,
+      dialogBackgroundColor: KColor.whiteBackground,
       dialogTheme: _dialogTheme,
       tooltipTheme: _tooltipTheme,
       bottomSheetTheme: _bottomSheetTheme,
@@ -42,61 +41,61 @@ class {{name.pascalCase()}}Theme {
 
   static TextTheme get _textTheme {
     return TextTheme(
-      displayLarge: {{name.pascalCase()}}TextStyle.displayLarge,
-      displayMedium: {{name.pascalCase()}}TextStyle.displayMedium,
-      displaySmall: {{name.pascalCase()}}TextStyle.displaySmall,
-      headlineMedium: {{name.pascalCase()}}TextStyle.headlineMedium,
-      headlineSmall: {{name.pascalCase()}}TextStyle.headlineSmall,
-      titleLarge: {{name.pascalCase()}}TextStyle.titleLarge,
-      titleMedium: {{name.pascalCase()}}TextStyle.titleMedium,
-      titleSmall: {{name.pascalCase()}}TextStyle.titleSmall,
-      bodyLarge: {{name.pascalCase()}}TextStyle.bodyLarge,
-      bodyMedium: {{name.pascalCase()}}TextStyle.bodyMedium,
-      bodySmall: {{name.pascalCase()}}TextStyle.bodySmall,
-      labelSmall: {{name.pascalCase()}}TextStyle.labelSmall,
-      labelLarge: {{name.pascalCase()}}TextStyle.labelLarge,
+      displayLarge: KTextStyle.displayLarge,
+      displayMedium: KTextStyle.displayMedium,
+      displaySmall: KTextStyle.displaySmall,
+      headlineMedium: KTextStyle.headlineMedium,
+      headlineSmall: KTextStyle.headlineSmall,
+      titleLarge: KTextStyle.titleLarge,
+      titleMedium: KTextStyle.titleMedium,
+      titleSmall: KTextStyle.titleSmall,
+      bodyLarge: KTextStyle.bodyLarge,
+      bodyMedium: KTextStyle.bodyMedium,
+      bodySmall: KTextStyle.bodySmall,
+      labelSmall: KTextStyle.labelSmall,
+      labelLarge: KTextStyle.labelLarge,
     );
   }
 
   static TextTheme get _smallTextTheme {
     return TextTheme(
-      displayLarge: {{name.pascalCase()}}TextStyle.displayLarge.copyWith(
+      displayLarge: KTextStyle.displayLarge.copyWith(
         fontSize: _textTheme.displayLarge!.fontSize! * _smallTextScaleFactor,
       ),
-      displayMedium: {{name.pascalCase()}}TextStyle.displayMedium.copyWith(
+      displayMedium: KTextStyle.displayMedium.copyWith(
         fontSize: _textTheme.displayMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      displaySmall: {{name.pascalCase()}}TextStyle.displaySmall.copyWith(
+      displaySmall: KTextStyle.displaySmall.copyWith(
         fontSize: _textTheme.displaySmall!.fontSize! * _smallTextScaleFactor,
       ),
-      headlineMedium: {{name.pascalCase()}}TextStyle.headlineMedium.copyWith(
+      headlineMedium: KTextStyle.headlineMedium.copyWith(
         fontSize: _textTheme.headlineMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      headlineSmall: {{name.pascalCase()}}TextStyle.headlineSmall.copyWith(
+      headlineSmall: KTextStyle.headlineSmall.copyWith(
         fontSize: _textTheme.headlineSmall!.fontSize! * _smallTextScaleFactor,
       ),
-      titleLarge: {{name.pascalCase()}}TextStyle.titleLarge.copyWith(
+      titleLarge: KTextStyle.titleLarge.copyWith(
         fontSize: _textTheme.titleLarge!.fontSize! * _smallTextScaleFactor,
       ),
-      titleMedium: {{name.pascalCase()}}TextStyle.titleMedium.copyWith(
+      titleMedium: KTextStyle.titleMedium.copyWith(
         fontSize: _textTheme.titleMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      titleSmall: {{name.pascalCase()}}TextStyle.titleSmall.copyWith(
+      titleSmall: KTextStyle.titleSmall.copyWith(
         fontSize: _textTheme.titleSmall!.fontSize! * _smallTextScaleFactor,
       ),
-      bodyLarge: {{name.pascalCase()}}TextStyle.bodyLarge.copyWith(
+      bodyLarge: KTextStyle.bodyLarge.copyWith(
         fontSize: _textTheme.bodyLarge!.fontSize! * _smallTextScaleFactor,
       ),
-      bodyMedium: {{name.pascalCase()}}TextStyle.bodyMedium.copyWith(
+      bodyMedium: KTextStyle.bodyMedium.copyWith(
         fontSize: _textTheme.bodyMedium!.fontSize! * _smallTextScaleFactor,
       ),
-      bodySmall: {{name.pascalCase()}}TextStyle.bodySmall.copyWith(
+      bodySmall: KTextStyle.bodySmall.copyWith(
         fontSize: _textTheme.bodySmall!.fontSize! * _smallTextScaleFactor,
       ),
-      labelSmall: {{name.pascalCase()}}TextStyle.labelSmall.copyWith(
+      labelSmall: KTextStyle.labelSmall.copyWith(
         fontSize: _textTheme.labelSmall!.fontSize! * _smallTextScaleFactor,
       ),
-      labelLarge: {{name.pascalCase()}}TextStyle.labelLarge.copyWith(
+      labelLarge: KTextStyle.labelLarge.copyWith(
         fontSize: _textTheme.labelLarge!.fontSize! * _smallTextScaleFactor,
       ),
     );
@@ -104,57 +103,57 @@ class {{name.pascalCase()}}Theme {
 
   static TextTheme get _largeTextTheme {
     return TextTheme(
-      displayLarge: {{name.pascalCase()}}TextStyle.displayLarge.copyWith(
+      displayLarge: KTextStyle.displayLarge.copyWith(
         fontSize: _textTheme.displayLarge!.fontSize! * _largeTextScaleFactor,
       ),
-      displayMedium: {{name.pascalCase()}}TextStyle.displayMedium.copyWith(
+      displayMedium: KTextStyle.displayMedium.copyWith(
         fontSize: _textTheme.displayMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      displaySmall: {{name.pascalCase()}}TextStyle.displaySmall.copyWith(
+      displaySmall: KTextStyle.displaySmall.copyWith(
         fontSize: _textTheme.displaySmall!.fontSize! * _largeTextScaleFactor,
       ),
-      headlineMedium: {{name.pascalCase()}}TextStyle.headlineMedium.copyWith(
+      headlineMedium: KTextStyle.headlineMedium.copyWith(
         fontSize: _textTheme.headlineMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      headlineSmall: {{name.pascalCase()}}TextStyle.headlineSmall.copyWith(
+      headlineSmall: KTextStyle.headlineSmall.copyWith(
         fontSize: _textTheme.headlineSmall!.fontSize! * _largeTextScaleFactor,
       ),
-      titleLarge: {{name.pascalCase()}}TextStyle.titleLarge.copyWith(
+      titleLarge: KTextStyle.titleLarge.copyWith(
         fontSize: _textTheme.titleLarge!.fontSize! * _largeTextScaleFactor,
       ),
-      titleMedium: {{name.pascalCase()}}TextStyle.titleMedium.copyWith(
+      titleMedium: KTextStyle.titleMedium.copyWith(
         fontSize: _textTheme.titleMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      titleSmall: {{name.pascalCase()}}TextStyle.titleSmall.copyWith(
+      titleSmall: KTextStyle.titleSmall.copyWith(
         fontSize: _textTheme.titleSmall!.fontSize! * _largeTextScaleFactor,
       ),
-      bodyLarge: {{name.pascalCase()}}TextStyle.bodyLarge.copyWith(
+      bodyLarge: KTextStyle.bodyLarge.copyWith(
         fontSize: _textTheme.bodyLarge!.fontSize! * _largeTextScaleFactor,
       ),
-      bodyMedium: {{name.pascalCase()}}TextStyle.bodyMedium.copyWith(
+      bodyMedium: KTextStyle.bodyMedium.copyWith(
         fontSize: _textTheme.bodyMedium!.fontSize! * _largeTextScaleFactor,
       ),
-      bodySmall: {{name.pascalCase()}}TextStyle.bodySmall.copyWith(
+      bodySmall: KTextStyle.bodySmall.copyWith(
         fontSize: _textTheme.bodySmall!.fontSize! * _largeTextScaleFactor,
       ),
-      labelSmall: {{name.pascalCase()}}TextStyle.labelSmall.copyWith(
+      labelSmall: KTextStyle.labelSmall.copyWith(
         fontSize: _textTheme.labelSmall!.fontSize! * _largeTextScaleFactor,
       ),
-      labelLarge: {{name.pascalCase()}}TextStyle.labelLarge.copyWith(
+      labelLarge: KTextStyle.labelLarge.copyWith(
         fontSize: _textTheme.labelLarge!.fontSize! * _largeTextScaleFactor,
       ),
     );
   }
 
   static AppBarTheme get _appBarTheme {
-    return const AppBarTheme(color: {{name.pascalCase()}}Colors.primary);
+    return const AppBarTheme(color: KColor.primary);
   }
 
   static ElevatedButtonThemeData get _elevatedButtonTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        backgroundColor: {{name.pascalCase()}}Colors.primary,
+        backgroundColor: KColor.primary,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
@@ -166,11 +165,11 @@ class {{name.pascalCase()}}Theme {
   static OutlinedButtonThemeData get _outlinedButtonTheme {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: {{name.pascalCase()}}Colors.white,
+        foregroundColor: KColor.white,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
-        side: const BorderSide(color: {{name.pascalCase()}}Colors.white, width: 2),
+        side: const BorderSide(color: KColor.white, width: 2),
         fixedSize: const Size(208, 54),
       ),
     );
@@ -179,11 +178,11 @@ class {{name.pascalCase()}}Theme {
   static TooltipThemeData get _tooltipTheme {
     return const TooltipThemeData(
       decoration: BoxDecoration(
-        color: {{name.pascalCase()}}Colors.charcoal,
+        color: KColor.charcoal,
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
       padding: EdgeInsets.all(10),
-      textStyle: TextStyle(color: {{name.pascalCase()}}Colors.white),
+      textStyle: TextStyle(color: KColor.white),
     );
   }
 
@@ -197,7 +196,7 @@ class {{name.pascalCase()}}Theme {
 
   static BottomSheetThemeData get _bottomSheetTheme {
     return const BottomSheetThemeData(
-      backgroundColor: {{name.pascalCase()}}Colors.whiteBackground,
+      backgroundColor: KColor.whiteBackground,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
       ),
@@ -209,11 +208,11 @@ class {{name.pascalCase()}}Theme {
       indicator: UnderlineTabIndicator(
         borderSide: BorderSide(
           width: 2,
-          color: {{name.pascalCase()}}Colors.primary,
+          color: KColor.primary,
         ),
       ),
-      labelColor: {{name.pascalCase()}}Colors.primary,
-      unselectedLabelColor: {{name.pascalCase()}}Colors.black25,
+      labelColor: KColor.primary,
+      unselectedLabelColor: KColor.black25,
       indicatorSize: TabBarIndicatorSize.tab,
     );
   }
@@ -222,7 +221,7 @@ class {{name.pascalCase()}}Theme {
     return const DividerThemeData(
       space: 0,
       thickness: 1,
-      color: {{name.pascalCase()}}Colors.black25,
+      color: KColor.black25,
     );
   }
 }

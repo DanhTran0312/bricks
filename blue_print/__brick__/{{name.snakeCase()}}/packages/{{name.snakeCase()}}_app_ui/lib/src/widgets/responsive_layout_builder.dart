@@ -1,4 +1,4 @@
-import 'package:{{name.snakeCase()}}_app_ui/{{name.snakeCase()}}_app_ui.dart';
+import 'package:{{name.snakeCase()}}_app_ui/lib.dart';
 import 'package:flutter/widgets.dart';
 
 /// Signature for the individual builders (`small`, `large`, etc.).

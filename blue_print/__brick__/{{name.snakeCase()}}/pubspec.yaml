@@ -9,9 +9,9 @@ environment:
   sdk: '>=2.19.4 <3.0.0'
 
 dependencies:
+  equatable: ^2.0.5
   {{name.snakeCase()}}_app_ui:
     path: packages/{{name.snakeCase()}}_app_ui
-  equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -21,13 +21,14 @@ dependencies:
 
 dev_dependencies:
   custom_lint: ^0.3.2
+  dart_code_metrics: ^5.7.0
   flutter_test:
     sdk: flutter
   integration_test:
     sdk: flutter
   mocktail: 0.3.0
-  riverpod_lint: ^1.1.6
-  very_good_analysis: ^3.1.0
+  riverpod_lint: ^1.1.8
+  very_good_analysis: ^4.0.0+1
 
 flutter:
   uses-material-design: true

@@ -1,0 +1,31 @@
+name: Flutter Stylizer
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  flutter-stylizer:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: Install Flutter Stylizer
+      run: |
+        go install github.com/gmlewis/go-flutter-stylizer/cmd/flutter-stylizer@latest
+
+    - name: Check Style
+      run: |
+        export PATH=$PATH:$(go env GOPATH)/bin
+        flutter-stylizer -w ./...
