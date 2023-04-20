@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // TODO: configure your custom color palette here
 /// Defines the color palette for the {{name.pascalCase()}} UI.
-abstract class KColor {
+abstract class KColors {
   /// Black
   static const Color black = Color(0xFF202124);
 

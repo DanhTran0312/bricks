@@ -7,7 +7,7 @@ void run(HookContext context) async {
   final projectName = ReCase(context.vars['name']).snakeCase;
 
   await _runProcess(
-      context, 'flutter pub clean', ['flutter', 'pub', 'clean'], projectName);
+      context, 'flutter clean', ['flutter', 'clean'], projectName);
   await _runProcess(
       context, 'flutter pub get', ['flutter', 'pub', 'get'], projectName);
   await _runProcess(context, 'flutter pub upgrade --major-versions',

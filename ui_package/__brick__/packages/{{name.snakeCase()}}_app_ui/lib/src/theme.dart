@@ -10,12 +10,12 @@ class KTheme {
   /// Standard `ThemeData` for {{name.pascalCase()}} UI.
   static ThemeData get standard {
     return ThemeData(
-      colorScheme: ColorScheme.fromSwatch(accentColor: KColor.primary),
+      colorScheme: ColorScheme.fromSwatch(accentColor: KColors.primary),
       appBarTheme: _appBarTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
       outlinedButtonTheme: _outlinedButtonTheme,
       textTheme: _textTheme,
-      dialogBackgroundColor: KColor.whiteBackground,
+      dialogBackgroundColor: KColors.whiteBackground,
       dialogTheme: _dialogTheme,
       tooltipTheme: _tooltipTheme,
       bottomSheetTheme: _bottomSheetTheme,
@@ -146,14 +146,14 @@ class KTheme {
   }
 
   static AppBarTheme get _appBarTheme {
-    return const AppBarTheme(color: KColor.primary);
+    return const AppBarTheme(color: KColors.primary);
   }
 
   static ElevatedButtonThemeData get _elevatedButtonTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        backgroundColor: KColor.primary,
+        backgroundColor: KColors.primary,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
@@ -165,11 +165,11 @@ class KTheme {
   static OutlinedButtonThemeData get _outlinedButtonTheme {
     return OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: KColor.white,
+        foregroundColor: KColors.white,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30)),
         ),
-        side: const BorderSide(color: KColor.white, width: 2),
+        side: const BorderSide(color: KColors.white, width: 2),
         fixedSize: const Size(208, 54),
       ),
     );
@@ -178,11 +178,11 @@ class KTheme {
   static TooltipThemeData get _tooltipTheme {
     return const TooltipThemeData(
       decoration: BoxDecoration(
-        color: KColor.charcoal,
+        color: KColors.charcoal,
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
       padding: EdgeInsets.all(10),
-      textStyle: TextStyle(color: KColor.white),
+      textStyle: TextStyle(color: KColors.white),
     );
   }
 
@@ -196,7 +196,7 @@ class KTheme {
 
   static BottomSheetThemeData get _bottomSheetTheme {
     return const BottomSheetThemeData(
-      backgroundColor: KColor.whiteBackground,
+      backgroundColor: KColors.whiteBackground,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
       ),
@@ -208,11 +208,11 @@ class KTheme {
       indicator: UnderlineTabIndicator(
         borderSide: BorderSide(
           width: 2,
-          color: KColor.primary,
+          color: KColors.primary,
         ),
       ),
-      labelColor: KColor.primary,
-      unselectedLabelColor: KColor.black25,
+      labelColor: KColors.primary,
+      unselectedLabelColor: KColors.black25,
       indicatorSize: TabBarIndicatorSize.tab,
     );
   }
@@ -221,7 +221,7 @@ class KTheme {
     return const DividerThemeData(
       space: 0,
       thickness: 1,
-      color: KColor.black25,
+      color: KColors.black25,
     );
   }
 }

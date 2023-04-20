@@ -8,7 +8,7 @@ class KTextStyle {
   static const _baseTextStyle = TextStyle(
     package: '{{name.snakeCase()}}_app_ui',
     fontFamily: FontFamily.nunitoSans,
-    color: KColor.black,
+    color: KColors.black,
     fontWeight: KFontWeight.regular,
   );
 

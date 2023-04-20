@@ -1,3 +1,4 @@
+import 'package:{{name.snakeCase()}}_app_ui/lib.dart';
 import 'package:flutter/material.dart';
 
 // TODO: configure your custom text style extension methods here

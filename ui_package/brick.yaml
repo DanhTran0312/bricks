@@ -27,6 +27,6 @@ environment:
 vars:
   name:
     type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+    description: The name of the ui package.
+    default: app_ui
+    prompt: What is the name of the ui package?
