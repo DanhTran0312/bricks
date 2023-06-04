@@ -1,9 +1,13 @@
 export 'src/colors.dart';
+export 'src/core/extension/asset_extension.dart';
 export 'src/core/extension/gap_extension.dart';
 export 'src/core/extension/text_style_extension.dart';
+export 'src/gen/assets.gen.dart';
+export 'src/gen/fonts.gen.dart';
 export 'src/layout/breakpoints.dart';
-export 'src/spacing/gap.dart';
+export 'src/spacing/size.dart';
 export 'src/theme.dart';
+export 'src/typography/font_sizes.dart';
 export 'src/typography/font_weights.dart';
 export 'src/typography/text_styles.dart';
 export 'src/widgets/responsive_layout_builder.dart';

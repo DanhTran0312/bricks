@@ -1,4 +1,4 @@
-name: {{name.snakeCase()}}_app_ui
+name: {{name.snakeCase()}}_ui
 description: UI Toolkit for the {{name.titleCase()}} Flutter Application
 version: 0.0.1
 publish_to: none

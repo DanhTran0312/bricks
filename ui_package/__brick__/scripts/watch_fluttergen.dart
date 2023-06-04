@@ -3,7 +3,7 @@ import 'dart:io';
 
 void main() async {
   // Change the working directory to the desired path.
-  Directory.current = Directory('packages/{{name.snakeCase()}}_app_ui/');
+  Directory.current = Directory('packages/{{name.snakeCase()}}_ui/');
 
   await _runCommand('flutter pub get');
   await _runCommand('flutter packages pub run build_runner watch -d');

@@ -1,12 +1,12 @@
-import 'package:{{name.snakeCase()}}_app_ui/lib.dart';
-import 'package:{{name.snakeCase()}}_app_ui/src/gen/fonts.gen.dart';
+import 'package:{{name.snakeCase()}}_ui/lib.dart';
+import 'package:{{name.snakeCase()}}_ui/src/gen/fonts.gen.dart';
 import 'package:flutter/widgets.dart';
 
 // TODO: Configure text styles
 /// {{name.pascalCase()}} Text Style Definitions
 class KTextStyle {
   static const _baseTextStyle = TextStyle(
-    package: '{{name.snakeCase()}}_app_ui',
+    package: '{{name.snakeCase()}}_ui',
     fontFamily: FontFamily.nunitoSans,
     color: KColors.black,
     fontWeight: KFontWeight.regular,

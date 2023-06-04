@@ -1,4 +1,4 @@
-import 'package:{{name.snakeCase()}}_app_ui/lib.dart';
+import 'package:{{name.snakeCase()}}_ui/lib.dart';
 import 'package:flutter/material.dart';
 
 const _smallTextScaleFactor = 0.80;

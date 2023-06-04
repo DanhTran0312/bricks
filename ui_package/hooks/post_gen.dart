@@ -16,7 +16,7 @@ void run(HookContext context) async {
     ['dart', 'pub', 'global', 'activate', 'flutter_gen'],
   );
 
-  final uiPackageDir = Directory('./packages/${packageName}_app_ui');
+  final uiPackageDir = Directory('./packages/${packageName}_ui');
   await _runProcess(
     context,
     'Running flutter pub get in ui package',

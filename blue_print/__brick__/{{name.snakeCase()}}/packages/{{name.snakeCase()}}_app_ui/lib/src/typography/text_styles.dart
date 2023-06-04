@@ -1,21 +1,20 @@
 import 'package:{{name.snakeCase()}}_app_ui/lib.dart';
-import 'package:{{name.snakeCase()}}_app_ui/src/gen/fonts.gen.dart';
 import 'package:flutter/widgets.dart';
 
-/// {{name.pascalCase()}} Text Style Definitions
+/// Century Text Style Definitions
 class KTextStyle {
   static const _baseTextStyle = TextStyle(
-    package: '{{name.snakeCase()}}_app_ui',
+    package: 'century_app_ui',
     fontFamily: FontFamily.nunitoSans,
     color: KColor.black,
-    fontWeight: {{name.pascalCase()}}FontWeight.regular,
+    fontWeight: KFontWeight.w400,
   );
 
   /// Headline 1 Text Style
   static TextStyle get displayLarge {
     return _baseTextStyle.copyWith(
       fontSize: 56,
-      fontWeight: {{name.pascalCase()}}FontWeight.medium,
+      fontWeight: KFontWeight.w500,
     );
   }
 
@@ -23,7 +22,7 @@ class KTextStyle {
   static TextStyle get displayMedium {
     return _baseTextStyle.copyWith(
       fontSize: 30,
-      fontWeight: {{name.pascalCase()}}FontWeight.regular,
+      fontWeight: KFontWeight.w400,
     );
   }
 
@@ -31,7 +30,7 @@ class KTextStyle {
   static TextStyle get displaySmall {
     return _baseTextStyle.copyWith(
       fontSize: 28,
-      fontWeight: {{name.pascalCase()}}FontWeight.regular,
+      fontWeight: KFontWeight.w400,
     );
   }
 
@@ -39,7 +38,7 @@ class KTextStyle {
   static TextStyle get headlineMedium {
     return _baseTextStyle.copyWith(
       fontSize: 22,
-      fontWeight: {{name.pascalCase()}}FontWeight.bold,
+      fontWeight: KFontWeight.w700,
     );
   }
 
@@ -47,7 +46,7 @@ class KTextStyle {
   static TextStyle get headlineSmall {
     return _baseTextStyle.copyWith(
       fontSize: 20,
-      fontWeight: {{name.pascalCase()}}FontWeight.medium,
+      fontWeight: KFontWeight.w500,
     );
   }
 
@@ -55,7 +54,7 @@ class KTextStyle {
   static TextStyle get titleLarge {
     return _baseTextStyle.copyWith(
       fontSize: 22,
-      fontWeight: {{name.pascalCase()}}FontWeight.bold,
+      fontWeight: KFontWeight.w700,
     );
   }
 
@@ -63,7 +62,7 @@ class KTextStyle {
   static TextStyle get titleMedium {
     return _baseTextStyle.copyWith(
       fontSize: 16,
-      fontWeight: {{name.pascalCase()}}FontWeight.bold,
+      fontWeight: KFontWeight.w700,
     );
   }
 
@@ -71,7 +70,7 @@ class KTextStyle {
   static TextStyle get titleSmall {
     return _baseTextStyle.copyWith(
       fontSize: 14,
-      fontWeight: {{name.pascalCase()}}FontWeight.bold,
+      fontWeight: KFontWeight.w700,
     );
   }
 
@@ -79,7 +78,7 @@ class KTextStyle {
   static TextStyle get bodyLarge {
     return _baseTextStyle.copyWith(
       fontSize: 18,
-      fontWeight: {{name.pascalCase()}}FontWeight.medium,
+      fontWeight: KFontWeight.w500,
     );
   }
 
@@ -87,7 +86,7 @@ class KTextStyle {
   static TextStyle get bodyMedium {
     return _baseTextStyle.copyWith(
       fontSize: 16,
-      fontWeight: {{name.pascalCase()}}FontWeight.regular,
+      fontWeight: KFontWeight.w400,
     );
   }
 
@@ -95,7 +94,7 @@ class KTextStyle {
   static TextStyle get bodySmall {
     return _baseTextStyle.copyWith(
       fontSize: 14,
-      fontWeight: {{name.pascalCase()}}FontWeight.regular,
+      fontWeight: KFontWeight.w400,
     );
   }
 
@@ -103,7 +102,7 @@ class KTextStyle {
   static TextStyle get labelSmall {
     return _baseTextStyle.copyWith(
       fontSize: 16,
-      fontWeight: {{name.pascalCase()}}FontWeight.regular,
+      fontWeight: KFontWeight.w400,
     );
   }
 
@@ -111,7 +110,7 @@ class KTextStyle {
   static TextStyle get labelLarge {
     return _baseTextStyle.copyWith(
       fontSize: 18,
-      fontWeight: {{name.pascalCase()}}FontWeight.medium,
+      fontWeight: KFontWeight.w500,
     );
   }
 }
