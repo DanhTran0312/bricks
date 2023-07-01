@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 enum KSize {
   none(0),
   xxs(2),
@@ -12,3 +14,6 @@ enum KSize {
   const KSize(this.value);
   final double value;
 }
+
+SizedBox verticalSpace(double value) => SizedBox(height: value);
+SizedBox horizontalSpace(double value) => SizedBox(width: value);

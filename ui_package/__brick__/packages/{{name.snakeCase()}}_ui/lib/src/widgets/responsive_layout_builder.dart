@@ -11,9 +11,9 @@ typedef ResponsiveLayoutWidgetBuilder = Widget Function(BuildContext, Widget?);
 class ResponsiveLayoutBuilder extends StatelessWidget {
   /// {@macro responsive_layout_builder}
   const ResponsiveLayoutBuilder({
-    required this.small,
-    required this.large,
-    this.medium,
+    required this.mobile,
+    required this.desktop,
+    this.tablet,
     this.xLarge,
     this.child,
     super.key,
@@ -25,13 +25,13 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
   final Widget? child;
 
   /// [ResponsiveLayoutWidgetBuilder] for large layout.
-  final ResponsiveLayoutWidgetBuilder large;
-
-  /// [ResponsiveLayoutWidgetBuilder] for medium layout.
-  final ResponsiveLayoutWidgetBuilder? medium;
+  final ResponsiveLayoutWidgetBuilder desktop;
 
   /// [ResponsiveLayoutWidgetBuilder] for small layout.
-  final ResponsiveLayoutWidgetBuilder small;
+  final ResponsiveLayoutWidgetBuilder mobile;
+
+  /// [ResponsiveLayoutWidgetBuilder] for medium layout.
+  final ResponsiveLayoutWidgetBuilder? tablet;
 
   /// [ResponsiveLayoutWidgetBuilder] for xLarge layout.
   final ResponsiveLayoutWidgetBuilder? xLarge;
@@ -41,13 +41,13 @@ class ResponsiveLayoutBuilder extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth <= Breakpoints.small.value) {
-          return small(context, child);
+          return mobile(context, child);
         } else if (constraints.maxWidth <= Breakpoints.medium.value) {
-          return (medium ?? large).call(context, child);
+          return (tablet ?? desktop).call(context, child);
         } else if (constraints.maxWidth <= Breakpoints.large.value) {
-          return large(context, child);
+          return desktop(context, child);
         } else {
-          return (xLarge ?? large).call(context, child);
+          return (xLarge ?? desktop).call(context, child);
         }
       },
     );

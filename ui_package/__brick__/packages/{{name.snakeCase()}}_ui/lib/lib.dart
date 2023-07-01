@@ -1,6 +1,12 @@
 export 'src/colors.dart';
+export 'src/core/constants/constants.dart';
+export 'src/core/extension/assets_extension.dart';
 export 'src/core/extension/ksize_extension.dart';
 export 'src/core/extension/text_style_extension.dart';
+export 'src/core/extension/theme_extension.dart';
+export 'src/dark_theme.dart';
+export 'src/gen/assets.gen.dart';
+export 'src/gen/fonts.gen.dart';
 export 'src/layout/breakpoints.dart';
 export 'src/spacing/ksize.dart';
 export 'src/theme.dart';

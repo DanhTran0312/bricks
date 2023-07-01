@@ -40,3 +40,18 @@ vars:
     description: The organization responsible for the project in reverse domain name notation.
     default: com.example
     prompt: What is the organization name?
+  use_fvm:
+    type: boolean
+    description: Whether to use FVM to manage Flutter SDK versions.
+    default: false
+    prompt: Would you like to use FVM to manage Flutter SDK versions?
+  flutter_version:
+    type: enum
+    description: The Flutter SDK version to use.
+    default: stable
+    prompt: What version of Flutter would you like to use?
+    values:
+      - stable
+      - beta
+      - dev
+      - master

@@ -1,42 +1,159 @@
 import 'package:{{name.snakeCase()}}_ui/lib.dart';
 import 'package:flutter/material.dart';
 
-const _smallTextScaleFactor = 0.80;
-const _largeTextScaleFactor = 1.20;
-
 // TODO: Configure the theme for {{name.pascalCase()}}.
 /// Namespace for the {{name.pascalCase()}} [ThemeData].
 class KTheme {
-  /// Standard `ThemeData` for {{name.pascalCase()}} UI.
-  static ThemeData get standard {
+  static ThemeData get light {
     return ThemeData(
-      colorScheme: ColorScheme.fromSwatch(accentColor: KColors.primary),
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: KColors.purple,
+      ),
+      highlightColor: KColors.lighterPurple,
+      splashColor: KColors.lighterPurple,
+      hoverColor: KColors.lighterPurple.withOpacity(0.4),
+      splashFactory: InkRipple.splashFactory,
       appBarTheme: _appBarTheme,
       elevatedButtonTheme: _elevatedButtonTheme,
-      outlinedButtonTheme: _outlinedButtonTheme,
       textTheme: _textTheme,
-      dialogBackgroundColor: KColors.whiteBackground,
+      dialogBackgroundColor: KColors.coconut,
       dialogTheme: _dialogTheme,
       tooltipTheme: _tooltipTheme,
       bottomSheetTheme: _bottomSheetTheme,
       tabBarTheme: _tabBarTheme,
       dividerTheme: _dividerTheme,
+      textButtonTheme: _textButtonTheme,
+      textSelectionTheme: _textSelectionTheme,
+      iconButtonTheme: _iconButtonTheme,
+      inputDecorationTheme: _inputDecorationTheme,
+      cardTheme: _cardTheme,
+      listTileTheme: _listTileTheme,
+      iconTheme: _iconTheme,
+      chipTheme: _chipTheme,
+      useMaterial3: true,
+      scaffoldBackgroundColor: KColors.coconut,
+      floatingActionButtonTheme: _floatingActionButtonTheme,
     );
   }
 
-  /// `ThemeData` for {{name.pascalCase()}} UI for small screens.
-  static ThemeData get small {
-    return standard.copyWith(textTheme: _smallTextTheme);
+  static ChipThemeData get _chipTheme {
+    return ChipThemeData(
+      backgroundColor: KColors.lighterPurple,
+      disabledColor: KColors.manatee300,
+      selectedColor: KColors.lighterPurple,
+      secondarySelectedColor: KColors.lighterPurple,
+      side: BorderSide.none,
+      padding: const EdgeInsets.all(5),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+    );
   }
 
-  /// `ThemeData` for {{name.pascalCase()}} UI for medium screens.
-  static ThemeData get medium {
-    return standard.copyWith(textTheme: _smallTextTheme);
+  static ListTileThemeData get _listTileTheme {
+    return ListTileThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(7),
+      ),
+      enableFeedback: true,
+    );
   }
 
-  /// `ThemeData` for {{name.pascalCase()}} UI for large screens.
-  static ThemeData get large {
-    return standard.copyWith(textTheme: _largeTextTheme);
+  static FloatingActionButtonThemeData get _floatingActionButtonTheme {
+    return const FloatingActionButtonThemeData(
+      shape: CircleBorder(),
+    );
+  }
+
+  static CardTheme get _cardTheme {
+    return CardTheme(
+      color: KColors.coconut,
+      surfaceTintColor: KColors.transparent,
+      shadowColor: KColors.lightPurple,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(7),
+      ),
+    );
+  }
+
+  static InputDecorationTheme get _inputDecorationTheme {
+    return InputDecorationTheme(
+      fillColor: KColors.coconut,
+      focusColor: KColors.purple,
+      filled: true,
+      errorMaxLines: 2,
+      focusedErrorBorder: OutlineInputBorder(
+        borderSide: const BorderSide(
+          color: KColors.bittersweet,
+          width: 1.2,
+        ),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      border: OutlineInputBorder(
+        borderSide: const BorderSide(
+          color: KColors.manatee200,
+        ),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      suffixIconColor: KColors.manatee300,
+      prefixIconColor: KColors.manatee300,
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(
+          color: KColors.manatee300.withOpacity(0.7),
+        ),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      hoverColor: KColors.purple.withOpacity(0.1),
+      focusedBorder: OutlineInputBorder(
+        borderSide: const BorderSide(
+          color: KColors.purple,
+        ),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderSide: const BorderSide(
+          color: KColors.bittersweet,
+        ),
+        borderRadius: BorderRadius.circular(5),
+      ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+    );
+  }
+
+  static TextSelectionThemeData get _textSelectionTheme {
+    return const TextSelectionThemeData(
+      cursorColor: KColors.purple,
+      selectionColor: KColors.secondaryPurple,
+      selectionHandleColor: KColors.purple,
+    );
+  }
+
+  static TextButtonThemeData get _textButtonTheme {
+    return TextButtonThemeData(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(EdgeInsets.zero),
+        foregroundColor: MaterialStateProperty.all(KColors.transparent),
+        surfaceTintColor: MaterialStateProperty.all(KColors.transparent),
+        overlayColor: MaterialStateProperty.all(KColors.transparent),
+        splashFactory: InkRipple.splashFactory,
+      ),
+    );
+  }
+
+  static IconThemeData get _iconTheme {
+    return const IconThemeData(
+      color: KColors.purple,
+      size: 24,
+    );
+  }
+
+  static IconButtonThemeData get _iconButtonTheme {
+    return IconButtonThemeData(
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.all(KColors.lighterPurple),
+        splashFactory: InkRipple.splashFactory,
+      ),
+    );
   }
 
   static TextTheme get _textTheme {
@@ -57,120 +174,24 @@ class KTheme {
     );
   }
 
-  static TextTheme get _smallTextTheme {
-    return TextTheme(
-      displayLarge: KTextStyle.displayLarge.copyWith(
-        fontSize: _textTheme.displayLarge!.fontSize! * _smallTextScaleFactor,
-      ),
-      displayMedium: KTextStyle.displayMedium.copyWith(
-        fontSize: _textTheme.displayMedium!.fontSize! * _smallTextScaleFactor,
-      ),
-      displaySmall: KTextStyle.displaySmall.copyWith(
-        fontSize: _textTheme.displaySmall!.fontSize! * _smallTextScaleFactor,
-      ),
-      headlineMedium: KTextStyle.headlineMedium.copyWith(
-        fontSize: _textTheme.headlineMedium!.fontSize! * _smallTextScaleFactor,
-      ),
-      headlineSmall: KTextStyle.headlineSmall.copyWith(
-        fontSize: _textTheme.headlineSmall!.fontSize! * _smallTextScaleFactor,
-      ),
-      titleLarge: KTextStyle.titleLarge.copyWith(
-        fontSize: _textTheme.titleLarge!.fontSize! * _smallTextScaleFactor,
-      ),
-      titleMedium: KTextStyle.titleMedium.copyWith(
-        fontSize: _textTheme.titleMedium!.fontSize! * _smallTextScaleFactor,
-      ),
-      titleSmall: KTextStyle.titleSmall.copyWith(
-        fontSize: _textTheme.titleSmall!.fontSize! * _smallTextScaleFactor,
-      ),
-      bodyLarge: KTextStyle.bodyLarge.copyWith(
-        fontSize: _textTheme.bodyLarge!.fontSize! * _smallTextScaleFactor,
-      ),
-      bodyMedium: KTextStyle.bodyMedium.copyWith(
-        fontSize: _textTheme.bodyMedium!.fontSize! * _smallTextScaleFactor,
-      ),
-      bodySmall: KTextStyle.bodySmall.copyWith(
-        fontSize: _textTheme.bodySmall!.fontSize! * _smallTextScaleFactor,
-      ),
-      labelSmall: KTextStyle.labelSmall.copyWith(
-        fontSize: _textTheme.labelSmall!.fontSize! * _smallTextScaleFactor,
-      ),
-      labelLarge: KTextStyle.labelLarge.copyWith(
-        fontSize: _textTheme.labelLarge!.fontSize! * _smallTextScaleFactor,
-      ),
-    );
-  }
-
-  static TextTheme get _largeTextTheme {
-    return TextTheme(
-      displayLarge: KTextStyle.displayLarge.copyWith(
-        fontSize: _textTheme.displayLarge!.fontSize! * _largeTextScaleFactor,
-      ),
-      displayMedium: KTextStyle.displayMedium.copyWith(
-        fontSize: _textTheme.displayMedium!.fontSize! * _largeTextScaleFactor,
-      ),
-      displaySmall: KTextStyle.displaySmall.copyWith(
-        fontSize: _textTheme.displaySmall!.fontSize! * _largeTextScaleFactor,
-      ),
-      headlineMedium: KTextStyle.headlineMedium.copyWith(
-        fontSize: _textTheme.headlineMedium!.fontSize! * _largeTextScaleFactor,
-      ),
-      headlineSmall: KTextStyle.headlineSmall.copyWith(
-        fontSize: _textTheme.headlineSmall!.fontSize! * _largeTextScaleFactor,
-      ),
-      titleLarge: KTextStyle.titleLarge.copyWith(
-        fontSize: _textTheme.titleLarge!.fontSize! * _largeTextScaleFactor,
-      ),
-      titleMedium: KTextStyle.titleMedium.copyWith(
-        fontSize: _textTheme.titleMedium!.fontSize! * _largeTextScaleFactor,
-      ),
-      titleSmall: KTextStyle.titleSmall.copyWith(
-        fontSize: _textTheme.titleSmall!.fontSize! * _largeTextScaleFactor,
-      ),
-      bodyLarge: KTextStyle.bodyLarge.copyWith(
-        fontSize: _textTheme.bodyLarge!.fontSize! * _largeTextScaleFactor,
-      ),
-      bodyMedium: KTextStyle.bodyMedium.copyWith(
-        fontSize: _textTheme.bodyMedium!.fontSize! * _largeTextScaleFactor,
-      ),
-      bodySmall: KTextStyle.bodySmall.copyWith(
-        fontSize: _textTheme.bodySmall!.fontSize! * _largeTextScaleFactor,
-      ),
-      labelSmall: KTextStyle.labelSmall.copyWith(
-        fontSize: _textTheme.labelSmall!.fontSize! * _largeTextScaleFactor,
-      ),
-      labelLarge: KTextStyle.labelLarge.copyWith(
-        fontSize: _textTheme.labelLarge!.fontSize! * _largeTextScaleFactor,
-      ),
-    );
-  }
-
   static AppBarTheme get _appBarTheme {
-    return const AppBarTheme(color: KColors.primary);
+    return const AppBarTheme(
+      elevation: 0,
+      backgroundColor: KColors.coconut,
+      surfaceTintColor: KColors.coconut,
+    );
   }
 
   static ElevatedButtonThemeData get _elevatedButtonTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 0,
-        backgroundColor: KColors.primary,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+        padding: const EdgeInsets.symmetric(
+          vertical: 20,
+          horizontal: 20,
         ),
-        fixedSize: const Size(208, 54),
-      ),
-    );
-  }
-
-  static OutlinedButtonThemeData get _outlinedButtonTheme {
-    return OutlinedButtonThemeData(
-      style: OutlinedButton.styleFrom(
-        foregroundColor: KColors.white,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
-        ),
-        side: const BorderSide(color: KColors.white, width: 2),
-        fixedSize: const Size(208, 54),
+        backgroundColor: KColors.purple,
+        foregroundColor: KColors.purple,
       ),
     );
   }
@@ -178,25 +199,27 @@ class KTheme {
   static TooltipThemeData get _tooltipTheme {
     return const TooltipThemeData(
       decoration: BoxDecoration(
-        color: KColors.charcoal,
+        color: KColors.woodSmoke,
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
       padding: EdgeInsets.all(10),
-      textStyle: TextStyle(color: KColors.white),
+      textStyle: TextStyle(color: KColors.coconut),
     );
   }
 
   static DialogTheme get _dialogTheme {
     return DialogTheme(
+      backgroundColor: KColors.coconut,
+      elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(20),
       ),
     );
   }
 
   static BottomSheetThemeData get _bottomSheetTheme {
     return const BottomSheetThemeData(
-      backgroundColor: KColors.whiteBackground,
+      backgroundColor: KColors.coconut,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
       ),
@@ -205,15 +228,7 @@ class KTheme {
 
   static TabBarTheme get _tabBarTheme {
     return const TabBarTheme(
-      indicator: UnderlineTabIndicator(
-        borderSide: BorderSide(
-          width: 2,
-          color: KColors.primary,
-        ),
-      ),
-      labelColor: KColors.primary,
-      unselectedLabelColor: KColors.black25,
-      indicatorSize: TabBarIndicatorSize.tab,
+      labelColor: KColors.whiteSmoke,
     );
   }
 
@@ -221,7 +236,7 @@ class KTheme {
     return const DividerThemeData(
       space: 0,
       thickness: 1,
-      color: KColors.black25,
+      color: KColors.manatee100,
     );
   }
 }

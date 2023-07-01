@@ -6,13 +6,29 @@ import 'package:mason/mason.dart';
 void run(HookContext context) async {
   final projectName = ReCase(context.vars['name']).snakeCase;
   final projectOrg = context.vars['org'];
+  final useFvm = context.vars['use_fvm'];
 
-  await _runProcess(
-    context,
-    'Creating Flutter Project $projectName...',
-    ['flutter', 'create', '--org', projectOrg, projectName],
-    null,
-  );
+  if (useFvm) {
+    await _runProcess(
+      context,
+      'Installing fvm...',
+      ['dart', 'pub', 'global', 'activate', 'fvm'],
+      null,
+    );
+    await _runProcess(
+      context,
+      'Creating Flutter Project $projectName...',
+      ['flutter', 'create', '--org', projectOrg, projectName],
+      null,
+    );
+  } else {
+    await _runProcess(
+      context,
+      'Creating Flutter Project $projectName...',
+      ['flutter', 'create', '--org', projectOrg, projectName],
+      null,
+    );
+  }
 
   await _runProcess(
     context,
